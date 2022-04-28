@@ -1,2 +1,2 @@
 # tdbreader
-Toolkit for reading TDB files and converting
+Toolkit for reading TDB (Thermodynamic DataBase) files and converting

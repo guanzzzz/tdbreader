@@ -1,5 +1,5 @@
 import re
-from pprint import pprint
+
 
 def transform_function(function_list, pre_define_function):
     transformed_pre_define_function = [i + '(T)' for i in pre_define_function]
@@ -286,7 +286,6 @@ class Database(object):
                 split_arg_1_list = args[1].split('(')
                 self.type = split_arg_1_list[0]
 
-
     class Constituent:
         """
         Constituent definition
@@ -436,14 +435,8 @@ class Database(object):
         self.content = {}
         self.note = {}
         lines = self.name.read().splitlines()
-        #pprint(lines)
-        #pprint(type(lines))
         line_id = indicator_id = 1
         first_item = True
-        #while '' in lines:
-        #    lines.remove('')
-        #while ' ' in lines:
-        #    lines.remove(' ')
         for line in lines:
             if line.isspace():
                 pass
@@ -476,7 +469,6 @@ class Database(object):
                                 self.content[indicator_id] += line.strip('!').split(' ')
                             indicator_id = line_id + 1
                 line_id += 1
-
 
     def show_read_results(self):
         return self.content
@@ -527,4 +519,3 @@ if __name__ == "__main__":
     tdb = open("Nb_La_Ga_ternary_gzh.tdb", encoding='utf-8')
     tdb_file = Database(tdb)
     tdb_file.configuration()
-
